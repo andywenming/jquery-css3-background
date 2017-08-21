@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>后台登录</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> -->
+
+</head>
+
+<body>
+<div class="wrapper">
+  <form class="login" name="form1" method="post" action="login.php">
+  <input type="hidden" name="gotopage" value="<?php if(!empty($gotopage)) echo RemoveXSS($gotopage);?>" />
+  <input type="hidden" name="dopost" value="login" />
+  <input name='adminstyle' type='hidden' value='newdedecms' />
+    <p class="title">网站后台登录</p>
+    <input name="userid" type="text" placeholder="输入用户名" autofocus/>
+    <i class="fa fa-user"></i>
+    <input name="pwd" type="password" placeholder="输入密码" />
+    <i class="fa fa-key"></i>
+
+            <input id="vdcode" type="text" name="validate" placeholder="输入验证码" style="text-transform:uppercase;">
+            <img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php" />
+
+    <!-- <a href="#">Forgot your password?</a> -->
+    <button type="submit">
+      <span class="state">登&nbsp;录</span>
+    </button>
+  </form>
+  <footer><a target="blank" href="http://www.d163.net/">Powered by Andy</a></footer>
+</div>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src='js/jquery.transit.min.js'></script>
+<script src="js/index.js"></script>
+</body>
+</html>
